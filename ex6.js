@@ -5,11 +5,11 @@ const prompt = require("prompt-sync")();
 require("dotenv").config();
 // const { API_ID, UNITS} = process.env;
 const appTemp = async (lat, lon) => {
-    let acessoAPI = await axios.get(process.env.WEATHER_API, {params: {lat: lat, lon: lon, appid: process.env.API_KEY, units: process.env.UNITS}});
+    let acessoAPI = await axios.get(process.env.API, {params: {lat: lat, lon: lon, appid: process.env.API_KEY, units: process.env.UNITS}});
     return acessoAPI.data;
 }
 const api = async () => {
-    var op
+    var op = 0;
     do {
         console.log("1- Encontrar temperatura");
         console.log("2- Sair");
